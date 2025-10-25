@@ -1,8 +1,17 @@
-const app = require('./src/app')
-require('dotenv').config()
+const app = require("./src/app");
+const dotenv = require("dotenv");
 
-const port = process.env.PORT;
+dotenv.config();
 
-app.listen(port , () =>{
-    console.log("Server running..." , port);
-})
+console.log(
+  "🔑 Environment check - API Key exists:",
+  !!process.env.GOOGLE_GEMINI_KEY
+);
+if (process.env.NODE_ENV !== "production") {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`Server is running on: ${PORT}`);
+  });
+}
+//Export server for vercel
+export default server;
