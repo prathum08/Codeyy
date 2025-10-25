@@ -11,8 +11,5 @@
       "src": "/(.*)",
       "dest": "server.js"
     }
-  ],
-  "env": {
-    "GOOGLE_GEMINI_KEY": "@google_gemini_key"
-  }
+  ]
 }
